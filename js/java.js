@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector(".main");
   let btn = null;
   let resetButton = null;
+  let nextButton = null;
   const container = document.querySelector(".container");
   let score = 0;
   let cont = 0;
@@ -14,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   async function startQuiz() {
     if(resetButton) {
       resetButton.remove();
+    }
+    if(nextButton) {
+      nextButton.remove();
     }
     btn = document.createElement('button');
     main.appendChild(btn);
@@ -126,6 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function resetQuizGame() {
     const questionConstructor = document.querySelector(".question-constructor");
     questionConstructor.remove();
+    cont = 0;
+
     startQuiz();
   }
 
@@ -151,10 +157,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if(cont === 4) {
+      resetButton = document.createElement("button");
+      resetButton.classList.add("btn");
+      resetButton.classList.add("reset");
+      resetButton.textContent = "Reiniciar";
+      resetButton.addEventListener("click", resetQuizGame);
+      btn.remove();
+      main.appendChild(resetButton);
       console.log('Has ganado');
     } else if (correctCount >= 2) {
       btn.remove();
-      startQuiz();
+      nextButton = document.createElement("button");
+      nextButton.classList.add("btn");
+      nextButton.classList.add("next");
+      nextButton.textContent = "Next";
+      nextButton.addEventListener("click", nextQuestion);
+      main.appendChild(nextButton);
+      
     } else {
       resetButton = document.createElement("button");
       resetButton.classList.add("btn");
@@ -169,6 +188,12 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       console.log("No has acertado las respuestas");
     }
+  }
+
+  function nextQuestion() {
+    const questionConstructor = document.querySelector(".question-constructor");
+    questionConstructor.remove();
+    startQuiz();
   }
 
   function deleteQuestion() {}
