@@ -1,0 +1,36 @@
+{
+    "preguntas": [
+      {
+        "pregunta": "¿Cuántos campeones distintos estaban disponibles en el lanzamiento de League of Legends?",
+        "respuestas": [
+            {"texto": "17"},
+            {"texto": "32"},
+            {"texto": "40"},
+            {"texto": "54"}
+        ],
+        "answer":"40"
+      },
+      {
+        "pregunta": "¿Cuál es el campeón más popular de League of Legends en 2023?",
+        "respuestas": [
+            {"texto": "Kai'Sa"},
+            {"texto": "Teemo"},
+            {"texto": "Yasuo"},
+            {"texto": "Blitzcrank"}
+        ],
+        "answer":"Kai'Sa"
+      },
+
+      {
+        "pregunta": "¿Cuál es el nombre del mapa principal de League of Legends?",
+        "respuestas": [
+            {"texto": "Arena"},
+            {"texto": "Bosque Retorcido"},
+            {"texto": "Abismo de los lamentos"},
+            {"texto": "Grieta del invocador"}
+        ],
+        "answer":"Grieta del invocador"
+      }
+    ]
+  }
+  
